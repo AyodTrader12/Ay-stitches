@@ -4,10 +4,11 @@ const categHero = () => {
   return (
     <div>
        <section className="bg-[#f0efed] overflow-hidden">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center md:items-end justify-between min-h-[280px] md:min-h-[380px]">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 flex flex-col-reverse
+      md:flex-row items-center md:items-end justify-between min-h-[280px] md:min-h-[410px]">
 
         {/* ── Left: Model Image ── */}
-        <div className="w-78 sm:w-67 md:w-72 flex-shrink-0 justify-center md:items-center mb-6 ">
+        <div className="w-78 sm:w-67 md:w-95 flex-shrink-0 justify-center md:items-center mb-6 ">
           <img
      
             src={heroimg}
@@ -17,7 +18,7 @@ const categHero = () => {
         </div>
 
         {/* ── Right: Text Content ── */}
-        <div className="flex-1 py-10 md:py-16 md:pl-20 text-center md:text-left">
+        <div className="flex-1 py-10 md:py-16 md:pl-20 text-center md:text-left ">
 
           {/* Collections label with line */}
           <div className="flex items-center gap-3 justify-center md:justify-start mb-3">
