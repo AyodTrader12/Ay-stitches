@@ -5,7 +5,7 @@ const PATH_NAMES = {
   "/category":       "Different collections",
   "/category/safari":         "Safari",
   "/category/agbada":       "Agbada",
- "/category/blazzers":        "Blazers",
+ "/category/blazzers":        "Blazzers",
 "/category/coporate_suit":        "corporate & suits",
   
 };
@@ -15,12 +15,18 @@ export default function PathName() {
 
   // Build crumb segments from the current path
   // e.g. /agbada → ["", "agbada"] → [Home, Black Agbada]
+  // The breadcrumb always starts with a link to the main category page.
+  // When on the category index itself the crumb is simply the current page
+  // and therefore not a link. On any sub‑category the first crumb points
+  // back to "/category".
   const segments = pathname === "/"
-    ? [{ label: "category", path: "/" }]
-    : [
-        { label: "category", path: "/" },
-        { label: PATH_NAMES[pathname] || pathname, path: pathname },
-      ];
+    ? [{ label: "Home", path: "/" }]
+    : pathname === "/category"
+      ? [{ label: "category", path: "/category" }]
+      : [
+          { label: "category", path: "/category" },
+          { label: { name: PATH_NAMES[pathname] || pathname, suffix: "Collections" }, path: pathname },
+        ];
 
   return (
     <nav className="flex items-center gap-2 text-sm py-4">
@@ -43,7 +49,13 @@ export default function PathName() {
 
             {/* Last crumb = current page, bold & dark. Others = links */}
             {isLast ? (
-              <span className="font-bold text-gray-900">{crumb.label}</span>
+              typeof crumb.label === 'object' ? (
+                <span className="font-bold text-gray-900">
+                  <span className="font-light text-gray-900">{crumb.label.name}</span> <span className="text-black">{crumb.label.suffix}</span>
+                </span>
+              ) : (
+                <span className="font-bold text-gray-900">{crumb.label}</span>
+              )
             ) : (
               <Link
                 to={crumb.path}
