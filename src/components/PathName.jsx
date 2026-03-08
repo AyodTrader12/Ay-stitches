@@ -6,7 +6,7 @@ const PATH_NAMES = {
   "/category/safari":         "Safari",
   "/category/agbada":       "Agbada",
  "/category/blazzers":        "Blazers",
-"/category/coporate_suit":        "Suits & Blazers",
+"/category/coporate_suit":        "corporate & suits",
   
 };
 

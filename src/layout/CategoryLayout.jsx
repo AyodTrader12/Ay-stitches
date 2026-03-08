@@ -20,7 +20,7 @@ const CategoryLayout = () => {
         <div className="h-px bg-gray-100 mb-6" />
 
         {/* ── Grid: dropdown in slot 1, Outlet fills the rest ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 place-items-center sm:place-items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 place-items-center sm:place-items-start md:ml-5">
 
           {/* Slot 1 — Dropdown stays here across all category pages */}
           <div className="relative">

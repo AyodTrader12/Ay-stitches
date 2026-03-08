@@ -5,7 +5,7 @@ const CATEGORIES = [
   { label: "Safari", path: "/category/safari" },
   { label: "Agbada",    path: "/category/agbada" },
   { label: "Blazzers",    path: "/category/blazzers" },
-  { label: "Suits & Blazers", path: "/category/coporate_suit" },
+  { label: "corporate & suits", path: "/category/coporate_suit" },
 ];
 
 const DropDown = () => {
