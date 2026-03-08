@@ -1,23 +1,23 @@
 import React from 'react'
 import ProductCard from "../components/ProductCard";
-import product1 from "../assets/product1.png"
-import product2 from "../assets/product2.png"
-import product3 from "../assets/product3.png"
-import product4 from "../assets/product4.png"
-import product5 from "../assets/product5.png"
-import product6 from "../assets/product6.png"
-import product7 from "../assets/product7.png"
-import product8 from "../assets/product8.png"
+import suit1 from "../assets/suit1.avif"
+import suit2 from "../assets/suit2.webp"
+import suit3 from "../assets/suit3.webp"
+import suit4 from "../assets/suit4.avif"
+import suit5 from "../assets/suit5.avif"
+import  suit6 from "../assets/suit6.avif"
+import suit7 from "../assets/suit7.avif"
+import suit8 from "../assets/suit8.avif"
 
 const PRODUCTS = [
-  { id: 1,  name: "Black Agbada",  price: 50000,   image: product1 },
-  { id: 2,  name: "Native Wears",  price: 50000,    image: product2 },
-  { id: 3,  name: "Native Wears",  price: 50000,    image: product3 },
-  { id: 4,  name: "Black Agbada",  price: 50000,   image: product4 },
-  { id: 5,  name: "Native Wears",  price: 50000,   image: product5 },
-  { id: 6,  name: "Native Wears",  price: 50000,    image: product6 },
-  { id: 7,  name: "Black Agbada",  price: 50000,   image: product7 },
-  { id: 8,  name: "Native Wears",  price: 50000,  image: product8 },
+  { id: 1,  name: "corporate & suits",  price: 50000,   image: suit1 },
+  { id: 2,  name: "corporate & suits",  price: 50000,    image: suit2 },
+  { id: 3,  name: "corporate & suits",  price: 50000,    image: suit3 },
+  { id: 4,  name: "corporate & suits",  price: 50000,   image: suit4 },
+  { id: 5,  name: "corporate & suits",  price: 50000,   image: suit5 },
+  { id: 6,  name: "corporate & suits",  price: 50000,    image: suit6 },
+  { id: 7,  name: "corporate & suits",  price: 50000,   image: suit7 },
+  { id: 8,  name: "corporate & suits",  price: 50000,  image: suit8 },
  
 ];
 const CoporateSuitt = () => {

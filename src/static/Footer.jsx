@@ -7,7 +7,7 @@ const  Footer = () => {
    
 const COMPANY_LINKS = [
   { label: "Home",       path: "/" },
-  { label: "Categories", path: "/categories" },
+  { label: "Categories", path: "/category" },
   { label: "About Us",   path: "/about" },
 ];
 
