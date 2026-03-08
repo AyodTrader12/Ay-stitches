@@ -23,30 +23,11 @@ const PRODUCTS = [
 ];
  const category = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-20">
-
-      {/* ── Breadcrumb ── */}
-      <PathName />
-
-      {/* ── Divider ── */}
-      <div className="h-px bg-gray-100 mb-6" />
-
-      {/* ── Grid: dropdown in slot 1, cards fill the rest ── */}
-      <div className="grid grid-cols-1 sm: md:grid-cols-3 gap-4 md:gap-2">
-
-        {/* Slot 1 — Dropdown sits here, floats on open, keeps its space */}
-        <div className="relative">
-          <DropDown />
-        </div>
-
-        {/* Slots 2–9 — Product cards */}
-        {PRODUCTS.map((product) => (
-          <ProductCard key={product.id} {...product} />
-        ))}
-
-      </div>
-
-    </div>
+  <>
+      {PRODUCTS.map((product) => (
+        <ProductCard key={product.id} {...product} />
+      ))}
+    </>
   );
 }
 

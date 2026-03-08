@@ -22,7 +22,7 @@ const categHero = () => {
 
           {/* Collections label with line */}
           <div className="flex items-center gap-3 justify-center md:justify-start mb-3">
-            <span className="w-8 h-px bg-gray-800 inline-block font-black" />
+            <span className="w-8 h-px bg-gray-800 inline-block font-extrabold md:font-extrabold" />
             <span className="text-gray-800 text-sm font-black tracking-widest italic">
               Collections
             </span>

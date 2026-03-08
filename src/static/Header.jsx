@@ -39,10 +39,10 @@ export default function Header () {
 
       {/* ── Main nav bar ── */}
       <nav className="border-b border-gray-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center gap-4 md:gap-0 relative">
 
-          {/* Left — desktop nav links */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Left — Desktop nav links / Mobile logo */}
+          <div className="hidden md:flex items-center gap-8 flex-1">
             {NAV_LINKS.map((link) => (
               <NavLink
                 key={link.path}
@@ -70,23 +70,33 @@ export default function Header () {
             ))}
           </div>
 
-          {/* Center — Logo (always centered) */}
+          {/* Mobile: Logo on left */}
           <Link
             to="/"
-            className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 select-none"
+            className="md:hidden flex items-center gap-2 select-none shrink-0"
           >
             <div className="w-11 h-11 rounded-full border-2 ">
               <span className="text-white font-bold text-xs tracking-tight leading-none">
                 <img src={logo} alt="AYStitches Logo" />
               </span>
             </div>
-            {/* <span className="hidden sm:block font-bold text-gray-900 text-base tracking-wide">
-              AYStitches
-            </span> */}
           </Link>
 
-          {/* Right — icon buttons */}
-          <div className="flex items-center gap-1 ml-auto">
+          {/* Desktop: Centered Logo */}
+          <Link
+            to="/"
+            className="hidden md:flex items-center gap-2 select-none shrink-0 absolute left-1/2 -translate-x-1/2"
+          >
+            <div className="w-11 h-11 rounded-full border-2 ">
+              <span className="text-white font-bold text-xs tracking-tight leading-none">
+                <img src={logo} alt="AYStitches Logo" />
+              </span>
+            </div>
+            
+          </Link>
+
+          {/* Mobile & Desktop: Icons + Hamburger */}
+          <div className="flex items-center gap-1 ml-auto md:ml-0 md:flex-1 md:justify-end">
 
             {/* Wishlist */}
             <button className="relative p-2 hover:bg-gray-50 rounded-full transition-colors">
@@ -144,7 +154,7 @@ export default function Header () {
                 {({ isActive }) => (
                   <>
                     {/* Sidebar accent bar */}
-                    <span className={`w-1 h-5 rounded-full flex-shrink-0 ${isActive ? "bg-white" : "bg-transparent"}`} />
+                    <span className={`w-1 h-5 rounded-full shrink-0 ${isActive ? "bg-white" : "bg-transparent"}`} />
                     {link.label}
                   </>
                 )}

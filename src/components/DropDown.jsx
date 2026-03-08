@@ -59,7 +59,7 @@ const DropDown = () => {
           <rect x="17" y="17" width="4" height="4" rx="0.8" />
         </svg>
 
-        <span>{active ? active.label : "Category"}</span>
+        <span className="text-green-600">{active ? active.label : "Category"}</span>
 
         {/* Chevron — rotates when open */}
         <svg

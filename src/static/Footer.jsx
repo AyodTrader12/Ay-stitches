@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
 import logo from "../assets/footerLogo.png";
 import { FaYoutube } from "react-icons/fa";
-const Footer = () => {
+import { FaFacebook } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+const  Footer = () => {
    
 const COMPANY_LINKS = [
   { label: "Home",       path: "/" },
@@ -14,7 +16,7 @@ const COMPANY_LINKS = [
 
       {/* ── Main footer content ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14">
-        <div className=" flex flex-col justify-center md:flex-row md:justify-between">
+        <div className=" flex flex-col items-center  gap-10 md:flex-row md:justify-between">
 
           {/* ── Col 1: Brand ── */}
           <div className="  col-span-2 md:col-span-1">
@@ -32,18 +34,18 @@ const COMPANY_LINKS = [
             <h4 className="text-xs font-semibold tracking-widest text-white mb-5">
               Contact Us
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li className="flex items-start gap-2">
                
                 <a href="mailto:info@aystitchesbrand.com"
-                  className="text-sm text-white hover:text-green-400 transition-colors break-all">
+                  className="text-sm text-white font-light md:font-light hover:text-green-400 transition-colors break-all">
                   info@aystitchesbrand.com
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 
                 <a href="tel:+2348062396707"
-                  className="text-sm text-white hover:text-green-400 transition-colors">
+                  className="text-sm text-white font-light md:font-light hover:text-green-400 transition-colors">
                   +234 806 239 6707
                 </a>
               </li>
@@ -63,19 +65,19 @@ const COMPANY_LINKS = [
                     end={path === "/"}
                     className={({ isActive }) =>
                       `text-sm transition-colors flex items-center gap-2 group
-                       ${isActive ? "text-green-400 font-semibold" : "text-gray-300 hover:text-green-400"}`
+                       ${isActive ? "text-green-400 font-light" : "text-gray-300 hover:text-green-400"}`
                     }
                   >
                     {({ isActive }) => (
                       <>
                         {/* Small arrow — slides in on active/hover */}
-                        <svg
+                        {/* <svg
                           className={`w-3 h-3 transition-all duration-200
                             ${isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0"}`}
                           fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                        </svg>
+                        </svg> */}
                         {label}
                       </>
                     )}
@@ -91,8 +93,8 @@ const COMPANY_LINKS = [
               Terms & Policies
             </h4>
             <ul className="space-y-3 mb-8">
-              <li>policy privacy</li>
-              <li>Terms & conditions</li>
+              <li className="font-light text-white">policy privacy</li>
+              <li className="font-light text-white">Terms & conditions</li>
             </ul>
 
             {/* Social icons */}
@@ -101,8 +103,8 @@ const COMPANY_LINKS = [
             </h4>
             <div className="flex items-center gap-3">
            <span><FaYoutube /></span>
-           <span><FaYoutube /></span>
-           <span><FaYoutube /></span>
+           <span><FaFacebook /></span>
+           <span><AiFillInstagram /></span>
 
             </div>
           </div>
