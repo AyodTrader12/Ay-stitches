@@ -12,13 +12,6 @@ export default function ProductCard({ name, price, image }) {
             group-hover:scale-105 transition-transform duration-500"
         />
 
-        {/* New / Hot tag badge */}
-        {/* {tag && (
-          <span className="absolute top-3 left-3 bg-green-600 text-white
-            text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
-            {tag}
-          </span>
-        )} */}
 
         {/* Wishlist button — appears on hover */}
         <button className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full shadow-md
@@ -31,14 +24,7 @@ export default function ProductCard({ name, price, image }) {
           </svg>
         </button>
 
-        {/* Quick view overlay */}
-        {/* <div className="absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0
-          transition-transform duration-300 p-3">
-          <button className="w-full bg-black/80 backdrop-blur-sm text-white text-xs
-            font-semibold py-2.5 rounded-xl hover:bg-green-700 transition-colors">
-            Quick View
-          </button>
-        </div> */}
+   
       </div>
 
       {/* ── Product Info ── */}
