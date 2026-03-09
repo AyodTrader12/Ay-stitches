@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom"
 import ProductCard from "../components/ProductCard"
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdOutlineFormatQuote } from "react-icons/md";
+import { RiArrowLeftLongFill } from "react-icons/ri";
+import { RiShoppingBasketLine } from "react-icons/ri";
 // ── You Might Also Like products ──
 import product1 from "../assets/product1.png"
 import product2 from "../assets/product2.png"
@@ -50,11 +52,11 @@ function RelatedCard({ name, price, image, desc }) {
     <div className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
 
       {/* Image - expands on hover */}
-      <div className="relative overflow-hidden bg-gray-100 group-hover:aspect-square transition-all duration-300 aspect-square">                                                                                                                                                         
+      <div className="relative overflow-hidden bg-gray-100 group-hover:aspect-[3/4] transition-all duration-300  ">                                                                                                                                            
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 "
+          className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-500 "
         />
       </div>
 
@@ -62,7 +64,7 @@ function RelatedCard({ name, price, image, desc }) {
       <div className="p-4 group-hover:hidden transition-opacity duration-300">
         <h3 className="font-bold text-gray-900 text-sm mb-1">{name}</h3>
         <p className="text-gray-400 text-xs leading-relaxed mb-3 line-clamp-2">{desc}</p>
-        <button className="bg-gray-900 text-white text-xs font-bold px-5 py-2.5 rounded-full
+        <button className="bg-gray-950 text-white text-xs font-bold px-5 py-2.5 rounded-md
           hover:bg-green-700 transition-colors duration-200">
           ₦{price.toLocaleString()}
         </button>
@@ -72,15 +74,13 @@ function RelatedCard({ name, price, image, desc }) {
              {/* Hover overlay with Buy Now button */}
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100
           transition-opacity duration-300 flex items-end ">
-          <button className="w-full flex items-center justify-center gap-2 bg-gray-900 text-white
-            text-gray-900 font-bold text-sm py-3 rounded-md
+          <button className="w-full flex items-center justify-center gap-2 bg-gray-950 text-white
+            text-gray-950 font-bold text-sm py-4  rounded-md
             hover:bg-gray-900 hover:text-white transition-colors duration-200">
             {/* Cart icon */}
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 6h13M9 19a1 1 0 100 2 1 1 0 000-2zm7 0a1 1 0 100 2 1 1 0 000-2z" />
-            </svg>
+           
             Buy Now
+            <RiShoppingBasketLine size={25}/>
           </button>
         </div>
       </div>
@@ -119,13 +119,10 @@ export default function ProductDetailPage() {
           {/* Back button */}
           <button
             onClick={() => navigate(-1)}
-            className="w-9 h-9 rounded-full border border-gray-200 flex items-center
+            className="w-12 h-12 rounded-full  bg-gray-100 border  border-gray-200 flex items-center
               justify-center hover:bg-gray-50 hover:border-gray-400 transition-all flex-shrink-0"
           >
-            <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
+            <RiArrowLeftLongFill   size={25}/>
           </button>
 
           {/* Breadcrumb */}
@@ -176,8 +173,8 @@ export default function ProductDetailPage() {
             <p className="text-2xl font-sans text-gray-900">₦50,000</p>
 
             {/* Countdown timer */}
-            <div className="inline-flex items-center gap-2 bg-gray-50 border border-gray-200
-              rounded-full px-4 py-2 w-fit">
+            <div className="inline-flex items-center gap-2  border-2 border-gray-200
+              rounded-full px-4 py-1 w-fit">
               <svg className="w-4 h-4 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor" strokeWidth={2}>
                 <circle cx="12" cy="12" r="10" />
@@ -192,16 +189,16 @@ export default function ProductDetailPage() {
 
             {/* Size selector */}
             <div>
-              <p className="text-sm font-semibold text-gray-700 mb-3">Select Size</p>
-              <div className="flex items-center gap-3">
+              <p className="text-xl font-semibold text-black mb-3">Select Size</p>
+              <div className="flex items-center gap-5">
                 {SIZES.map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`w-20 h-20 rounded-full text-2xl font-normal bg-gray-600 transition-all duration-200
+                    className={`w-16 h-16 rounded-full text-2xl font-normal bg-gray-100 transition-all duration-200
                       ${selectedSize === size
-                        ? "bg-gray-900 text-white border-gray-900"
-                        : "bg-white text-gray-700 border-gray-200 hover:border-gray-900 hover:text-gray-900"
+                        ? "bg-gray-950 text-white border-gray-900"
+                        : "bg-gray-200 text-gray-700 border-gray-200 hover:border-gray-900 hover:text-gray-900"
                       }`}
                   >
                     {size}
@@ -213,14 +210,14 @@ export default function ProductDetailPage() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 pt-1">
               {/* Add to cart */}
-              <button className="flex-1 bg-gray-900  text-white font-sans text-xl
+              <button className="flex-1 bg-gray-950  text-white font-sans text-xl
                 py-3 rounded-full transition-colors duration-200 text-lg tracking-wide max-w-[250px]">
                 Add to cart
               </button>
 
               {/* WhatsApp */}
               <button className="flex-1 flex items-center justify-center gap-2.5 border-2 max-w-[250px]
-                border-gray-200 bg-white text-gray-800 font-sans text-xl
+                border-gray-200 bg-white text-gray-950 font-sans text-xl
                 py-3 rounded-full transition-all duration-200 text-sm">
                 {/* WhatsApp SVG icon */}
                <IoLogoWhatsapp  className="text-green-500" size={40}/>
@@ -241,15 +238,16 @@ export default function ProductDetailPage() {
 
         {/* ── Ratings & Reviews ── */}
         <div className="mb-16">
-          <h2 className="text-xl font-bold text-gray-900 mb-8">Ratings & Reviews</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-950 mb-8">Ratings & Reviews</h2>
 
           <div className="flex flex-col md:flex-row gap-10">
 
             {/* Left — Big score + bars */}
             <div className="flex items-center gap-8 flex-shrink-0">
               {/* Big number */}
-              <div>
-                <p className="text-9xl font-bold text-gray-900 leading-none">4.5 <span className="text-2xl font-normal">/5</span></p>
+              <div className="flex gap-0 items-end">
+                <span className="text-9xl font-semibold text-gray-950 ">4,5 </span>
+                <span className="text-3xl font-light">/5</span>
               </div>
 
               {/* Star bars */}
@@ -261,7 +259,7 @@ export default function ProductDetailPage() {
                     </svg>
                     <span className="text-xs text-gray-500 w-3">{star}</span>
                     <div className="flex-1 bg-gray-200 rounded-full h-3">
-                      <div className={`${width} bg-gray-900 h-3 rounded-full`} />
+                      <div className={`${width} bg-gray-950 h-3 rounded-full`} />
                     </div>
                   </div>
                 ))}
@@ -269,7 +267,7 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Right — Review card */}
-            <div className="flex-1 border border-gray-100 rounded-2xl p-6  max-w-xl shadow-2xl">
+            <div className="flex-1 border border-gray-100 rounded-2xl p-6  max-w-[620px] shadow-2xl">
               <div className="flex items-start justify-between mb-4">
                 <Stars filled={5} />
                 {/* Quote icon */}
@@ -289,7 +287,7 @@ export default function ProductDetailPage() {
 
         {/* ── You Might Also Like ── */}
         <div>
-          <h2 className="text-3xl sm:text-7xl font-medium text-gray-900 text-center mb-10">
+          <h2 className="text-3xl sm:text-7xl font-sans text-gray-950 text-center mb-10">
             You Might Also Like
           </h2>
 
