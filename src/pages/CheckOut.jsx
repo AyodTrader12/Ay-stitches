@@ -62,7 +62,7 @@ export default function CheckoutPage() {
           <div className="flex-1 w-full">
 
             {/* Information label */}
-            <h2 className="text-base font-bold text-gray-900 mb-8 tracking-wide">
+            <h2 className="text-base font-bold text-gray-900 mb-15   tracking-wide">
               Information
             </h2>
 
