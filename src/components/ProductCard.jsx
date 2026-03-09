@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom"
+
 export default function ProductCard({ name, price, image }) {
+    
+const navigate = useNavigate()
   return (
     <div className=" bg-white rounded-2xl overflow-hidden border-none
       hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer w-64">
@@ -35,7 +39,9 @@ export default function ProductCard({ name, price, image }) {
         </p>
 
         {/* Price button */}
-        <button className="w-30 bg-gray-900 hover:bg-green-700 text-white
+        <button 
+        onClick={() => navigate("/product-details")}
+        className="w-30 bg-gray-900 hover:bg-green-700 text-white
           text-xs font-bold py-2 rounded-md transition-colors duration-200">
           ₦{price.toLocaleString()}
         </button>

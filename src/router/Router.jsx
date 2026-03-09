@@ -8,13 +8,17 @@ import Agbada from "../pages/Agbada";
 import Blaazzers from "../pages/Blaazzers";
 import CoporateSuitt from "../pages/CoporateSuitt";
 import MainLayout from "../layout/mainLayout";
+import ProductDetail from "../pages/ProductDetail";
+import CheckOut from "../pages/CheckOut";
 export const Router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout/>,
         children:[
             {index:true,path:"/",element:<HomePage/>},
-            {path:"/about",element:<About/>}
+            {path:"/about",element:<About/>},
+            {path:"/product-details",element:<ProductDetail/>},
+            {path:"/checkout",element:<CheckOut/>}
         ]
     },
     {
