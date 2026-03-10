@@ -197,24 +197,24 @@ export default function CheckoutPage() {
             <div className="space-y-3 mb-6">
               <div className="flex items-center justify-between text-sm border-b-2 border-gray-400 font-light ">
                 <span className="text-gray-950">Shipping:</span>
-                <span className="font-medium text-gray-700">
+                <span className="font-light text-gray-950">
                   {deliveryCost === 0 ? "Free" : `₦${deliveryCost.toLocaleString()}`}
                 </span>
               </div>
               <div className="flex items-center justify-between text-sm border-b-2 border-gray-400 font-light">
                 <span className="text-gray-950">Discount:</span>
-                <span className="font-medium text-gray-700">
+                <span className="font-medium text-gray-950">
                   ₦{discount.toLocaleString("en-NG", { minimumFractionDigits: 2 })}
                 </span>
               </div>
-              <div className="flex items-center justify-between text-sm font-bold text-gray-900 pt-2 border-t border-gray-100">
+              <div className="flex items-center justify-between text-sm font-bold text-gray-950 pt-2 border-t border-gray-100">
                 <span>Total:</span>
                 <span>₦{total.toLocaleString()}</span>
               </div>
             </div>
 
             {/* Pay Now button */}
-            <button className="w-full bg-gray-950 hover:bg-green-700 text-white font-bold
+            <button className="w-full bg-gray-950  text-white font-bold
               py-4 rounded-xl text-sm tracking-wide transition-colors duration-200">
               Pay Now
             </button>
