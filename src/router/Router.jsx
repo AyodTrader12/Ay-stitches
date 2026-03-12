@@ -10,7 +10,7 @@ import CoporateSuitt from "../pages/CoporateSuitt";
 import MainLayout from "../layout/mainLayout";
 import ProductDetail from "../pages/ProductDetail";
 import CheckOut from "../pages/CheckOut";
-import AdminLogin from "../pages/AdminLogin";
+
 export const Router = createBrowserRouter([
     {
         path: "/",
